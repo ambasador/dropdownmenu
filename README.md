@@ -1,4 +1,4 @@
-# Multi tier dropdown menu react
+# Multi tier dropdown menu react with nice effects
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
