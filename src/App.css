@@ -60,6 +60,7 @@ header {
 .menu-items button {
   text-align: left;
   padding: 0.7rem 2rem;
+  
 }
 
 .menu-items a:hover,
@@ -67,6 +68,8 @@ header {
 .menu-items button[aria-expanded=true] {
   background-color: #424242;
   color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
 }
 
 .arrow::after {
@@ -77,14 +80,18 @@ header {
   border-top: 0.42em solid;
   border-right: 0.32em solid transparent;
   border-left: 0.32em solid transparent;
+  transform-origin: center center;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
+.menu-items button[aria-expanded=true] .arrow::after{
+  transform: rotate(180deg);
+  transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 .dropdown {
   position: absolute;
   right: auto;
   left: 0;
-  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
-    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 0.875rem;
   z-index: 0;
   min-width: 15rem;
@@ -92,11 +99,11 @@ header {
   list-style: none;
   background-color: #424242;
   color: #fff;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0;
   opacity: 0;
   visibility: hidden;
   transform-style: preserve-3d;
-  transform: perspective(500px) translateY(-20px) scale(0);
+  transform: perspective(500px) translateY(-20px) scale(.9);
   transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
